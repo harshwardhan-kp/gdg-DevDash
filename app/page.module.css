@@ -1,6 +1,6 @@
 /* ===========================================
    PERSPECTIVE - Page Styles
-   ChatGPT/Gemini inspired layout
+   Clean ChatGPT/Gemini inspired layout
    =========================================== */
 
 .container {
@@ -10,40 +10,109 @@
   background: var(--bg-primary);
 }
 
-/* Header - Minimal like ChatGPT */
+/* Header */
 .header {
   position: sticky;
   top: 0;
   z-index: 100;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: var(--space-md) var(--space-lg);
   background: var(--bg-primary);
   border-bottom: 1px solid var(--border-light);
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: var(--space-sm);
+  color: var(--text-primary);
 }
 
-.logoIcon {
-  font-size: 1.5rem;
+.logo svg {
+  color: var(--accent-primary);
 }
 
 .logo h1 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  color: var(--text-primary);
 }
 
 .tagline {
   display: none;
 }
 
-/* Main Content Area - Centered like ChatGPT */
+/* Theme Toggle */
+.themeToggle {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.themeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.themeBtn:hover {
+  color: var(--text-secondary);
+  background: var(--bg-tertiary);
+}
+
+.themeBtn.active {
+  color: var(--accent-primary);
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Home Button */
+.homeBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.homeBtn:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border-color: var(--text-muted);
+}
+
+.homeBtn svg {
+  flex-shrink: 0;
+}
+
+/* Main Content */
 .main {
   flex: 1;
   display: flex;
@@ -55,7 +124,7 @@
   overflow-y: auto;
 }
 
-/* Welcome Screen - Centered and clean */
+/* Welcome */
 .welcome {
   flex: 1;
   display: flex;
@@ -75,7 +144,6 @@
   font-size: 1.75rem;
   font-weight: 600;
   margin-bottom: var(--space-md);
-  color: var(--text-primary);
 }
 
 .welcomeContent p {
@@ -112,7 +180,6 @@
   font-size: 0.875rem;
   text-align: left;
   transition: all var(--transition-fast);
-  cursor: pointer;
 }
 
 .exampleButton:hover {
@@ -148,13 +215,18 @@
   display: flex;
   align-items: center;
   gap: var(--space-xs);
-  padding: var(--space-xs) var(--space-sm);
+  padding: 6px 12px;
   border-radius: var(--radius-full);
   font-size: 0.75rem;
   font-weight: 500;
 }
 
-/* Messages Area - ChatGPT style */
+.legendIcon {
+  display: flex;
+  align-items: center;
+}
+
+/* Messages */
 .messages {
   display: flex;
   flex-direction: column;
@@ -166,7 +238,7 @@
   animation: fadeIn 0.3s ease;
 }
 
-/* User Message - Right aligned bubble */
+/* User Message */
 .userMessage {
   display: flex;
   justify-content: flex-end;
@@ -179,7 +251,7 @@
   max-width: 85%;
   padding: var(--space-md) var(--space-lg);
   background: var(--accent-primary);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   border-bottom-right-radius: var(--radius-sm);
 }
 
@@ -189,10 +261,13 @@
 }
 
 .userIcon {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.8);
 }
 
-/* Assistant Message - Full width like ChatGPT */
+/* Assistant Message */
 .assistantMessage {
   width: 100%;
 }
@@ -205,7 +280,6 @@
   animation: fadeIn 0.4s ease;
 }
 
-/* Event Header */
 .eventHeader {
   margin-bottom: var(--space-lg);
   padding-bottom: var(--space-lg);
@@ -216,7 +290,6 @@
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: var(--space-sm);
-  color: var(--text-primary);
 }
 
 .eventContext {
@@ -225,7 +298,7 @@
   font-size: 0.95rem;
 }
 
-/* Perspectives Grid - Clean cards */
+/* Perspectives Grid */
 .perspectivesGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -234,7 +307,7 @@
 
 .perspectiveCard {
   padding: var(--space-lg);
-  background: var(--bg-primary);
+  background: var(--bg-elevated);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   transition: all var(--transition-fast);
@@ -253,8 +326,8 @@
 .badge {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-xs);
-  padding: 4px 10px;
+  gap: 6px;
+  padding: 5px 12px;
   border-radius: var(--radius-full);
   font-size: 0.7rem;
   font-weight: 600;
@@ -263,10 +336,13 @@
   margin-bottom: var(--space-sm);
 }
 
+.badge svg {
+  flex-shrink: 0;
+}
+
 .cardHeader h4 {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--text-primary);
 }
 
 .cardSummary {
@@ -335,7 +411,7 @@
   font-style: italic;
 }
 
-/* Loading States */
+/* Loading */
 .rawResponse {
   padding: var(--space-lg);
   background: var(--bg-secondary);
@@ -390,7 +466,7 @@
   color: var(--perspective-ideology);
 }
 
-/* Footer / Input Area - ChatGPT style sticky bottom */
+/* Footer */
 .footer {
   position: sticky;
   bottom: 0;
@@ -406,7 +482,7 @@
   max-width: var(--max-content-width);
   margin: 0 auto;
   padding: var(--space-sm);
-  background: var(--bg-primary);
+  background: var(--bg-elevated);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);
@@ -414,7 +490,7 @@
 }
 
 .inputForm:focus-within {
-  border-color: var(--text-muted);
+  border-color: var(--accent-primary);
 }
 
 .input {
@@ -423,7 +499,6 @@
   background: transparent;
   padding: var(--space-md);
   font-size: 1rem;
-  color: var(--text-primary);
 }
 
 .input:focus {
@@ -435,12 +510,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   background: var(--accent-primary);
   border-radius: var(--radius-md);
   color: white;
-  font-size: 1.25rem;
   transition: all var(--transition-fast);
 }
 
@@ -469,6 +543,22 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .header {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .headerRight {
+    gap: var(--space-sm);
+  }
+
+  .homeBtn span {
+    display: none;
+  }
+
+  .homeBtn {
+    padding: var(--space-sm);
+  }
+
   .main {
     padding: var(--space-md);
   }

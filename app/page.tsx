@@ -351,23 +351,19 @@ export default function Home() {
                   <div className={styles.perspectiveContainer}>
                     {parsedResponses.has(message.id) ? (
                       <PerspectiveDisplay data={parsedResponses.get(message.id)!} />
-                    ) : message.content ? (
-                      <div className={styles.rawResponse}>
-                        <div className={styles.loadingIndicator}>
-                          <span className={styles.loadingDot}></span>
-                          <span className={styles.loadingDot}></span>
-                          <span className={styles.loadingDot}></span>
-                        </div>
-                        <p className={styles.streamingText}>{message.content}</p>
-                      </div>
                     ) : (
-                      <div className={styles.loadingMessage}>
-                        <div className={styles.loadingIndicator}>
-                          <span className={styles.loadingDot}></span>
-                          <span className={styles.loadingDot}></span>
-                          <span className={styles.loadingDot}></span>
+                      <div className={styles.loadingState}>
+                        <div className={styles.loadingContent}>
+                          <div className={styles.loadingSpinner}>
+                            <svg viewBox="0 0 50 50" className={styles.spinnerSvg}>
+                              <circle cx="25" cy="25" r="20" fill="none" strokeWidth="4" />
+                            </svg>
+                          </div>
+                          <div className={styles.loadingText}>
+                            <span className={styles.loadingTitle}>Gathering perspectives</span>
+                            <span className={styles.loadingSubtitle}>Analyzing different viewpoints...</span>
+                          </div>
                         </div>
-                        <span>Analyzing perspectives...</span>
                       </div>
                     )}
                   </div>

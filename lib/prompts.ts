@@ -1,29 +1,27 @@
-// System prompts for generating multi-perspective historical narratives
-
 export const PERSPECTIVE_TYPES = [
-    { id: 'country', label: 'Country', icon: '🌍', description: 'National/governmental perspective' },
-    { id: 'community', label: 'Community', icon: '👥', description: 'Ethnic or cultural community view' },
-    { id: 'religion', label: 'Religion', icon: '⛪', description: 'Religious interpretation' },
-    { id: 'ideology', label: 'Ideology', icon: '💡', description: 'Political/philosophical lens' },
-    { id: 'academic', label: 'Academic', icon: '📚', description: 'Scholarly consensus' },
+  { id: 'country', label: 'Country', icon: '🌍', description: 'National/governmental perspective' },
+  { id: 'community', label: 'Community', icon: '👥', description: 'Ethnic or cultural community view' },
+  { id: 'religion', label: 'Religion', icon: '⛪', description: 'Religious interpretation' },
+  { id: 'ideology', label: 'Ideology', icon: '💡', description: 'Political/philosophical lens' },
+  { id: 'academic', label: 'Academic', icon: '📚', description: 'Scholarly consensus' },
 ] as const;
 
 export type PerspectiveType = typeof PERSPECTIVE_TYPES[number]['id'];
 
 export interface Perspective {
-    type: PerspectiveType;
-    name: string;
-    summary: string;
-    keyPoints: string[];
-    sources?: string[];
-    bias?: string;
+  type: PerspectiveType;
+  name: string;
+  summary: string;
+  keyPoints: string[];
+  sources?: string[];
+  bias?: string;
 }
 
 export interface PerspectiveResponse {
-    event: string;
-    context: string;
-    perspectives: Perspective[];
-    disclaimer: string;
+  event: string;
+  context: string;
+  perspectives: Perspective[];
+  disclaimer: string;
 }
 
 export const SYSTEM_PROMPT = `You are a historical analysis assistant that provides multiple perspectives on historical events. Your goal is to present diverse viewpoints WITHOUT enforcing a single "truth."

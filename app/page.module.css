@@ -1,8 +1,3 @@
-/* ===========================================
-   PERSPECTIVE - Page Styles
-   Clean ChatGPT/Gemini inspired layout
-   =========================================== */
-
 .container {
   display: flex;
   flex-direction: column;
@@ -10,7 +5,6 @@
   background: var(--bg-primary);
 }
 
-/* Header */
 .header {
   position: sticky;
   top: 0;
@@ -62,7 +56,6 @@
   display: none;
 }
 
-/* Theme Toggle */
 .themeToggle {
   display: flex;
   align-items: center;
@@ -95,7 +88,6 @@
   box-shadow: var(--shadow-sm);
 }
 
-/* Home Button */
 .homeBtn {
   display: flex;
   align-items: center;
@@ -120,7 +112,6 @@
   flex-shrink: 0;
 }
 
-/* Main Content */
 .main {
   flex: 1;
   display: flex;
@@ -132,7 +123,6 @@
   overflow-y: auto;
 }
 
-/* Welcome */
 .welcome {
   flex: 1;
   display: flex;
@@ -195,7 +185,6 @@
   border-color: var(--text-muted);
 }
 
-/* Legend */
 .legend {
   padding: var(--space-lg);
   background: var(--bg-secondary);
@@ -234,7 +223,6 @@
   align-items: center;
 }
 
-/* Messages */
 .messages {
   display: flex;
   flex-direction: column;
@@ -246,7 +234,6 @@
   animation: fadeIn 0.3s ease;
 }
 
-/* User Message */
 .userMessage {
   display: flex;
   justify-content: flex-end;
@@ -275,7 +262,6 @@
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* Assistant Message */
 .assistantMessage {
   width: 100%;
 }
@@ -306,7 +292,6 @@
   font-size: 0.95rem;
 }
 
-/* Perspectives Horizontal Scroll */
 .perspectivesGrid {
   display: flex;
   gap: var(--space-md);
@@ -320,7 +305,6 @@
   -webkit-overflow-scrolling: touch;
 }
 
-/* Hide scrollbar but keep functionality */
 .perspectivesGrid::-webkit-scrollbar {
   height: 6px;
 }
@@ -446,7 +430,6 @@
   font-style: italic;
 }
 
-/* Loading State */
 .loadingState {
   display: flex;
   justify-content: center;
@@ -520,7 +503,6 @@
   color: var(--text-muted);
 }
 
-/* Perspective Reveal Animation */
 @keyframes revealUp {
   from {
     opacity: 0;
@@ -603,7 +585,6 @@
   color: var(--perspective-ideology);
 }
 
-/* Footer */
 .footer {
   position: sticky;
   bottom: 0;
@@ -678,7 +659,6 @@
   margin-right: auto;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .header {
     padding: var(--space-sm) var(--space-md);

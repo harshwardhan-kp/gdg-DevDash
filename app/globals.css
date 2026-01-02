@@ -1,9 +1,3 @@
-/* ===========================================
-   PERSPECTIVE - Design System
-   Light/Dark theme with system preference
-   =========================================== */
-
-/* Light Theme (default) */
 :root,
 [data-theme="light"] {
   --bg-primary: #ffffff;
@@ -34,7 +28,6 @@
   --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Dark Theme */
 [data-theme="dark"] {
   --bg-primary: #0f0f0f;
   --bg-secondary: #1a1a1a;
@@ -64,7 +57,6 @@
   --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
-/* Spacing */
 :root {
   --space-xs: 4px;
   --space-sm: 8px;
@@ -90,7 +82,6 @@
   --max-content-width: 48rem;
 }
 
-/* Reset & Base */
 *,
 *::before,
 *::after {
@@ -114,7 +105,6 @@ body {
   transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
-/* Typography */
 h1,
 h2,
 h3,
@@ -157,7 +147,6 @@ a:hover {
   color: var(--accent-secondary);
 }
 
-/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -196,7 +185,6 @@ a:hover {
   animation: fadeIn 0.3s ease forwards;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -215,19 +203,16 @@ a:hover {
   background: var(--text-muted);
 }
 
-/* Selection */
 ::selection {
   background: var(--accent-glow);
   color: var(--accent-primary);
 }
 
-/* Focus */
 :focus-visible {
   outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
 }
 
-/* Buttons */
 button {
   font-family: inherit;
   cursor: pointer;
@@ -237,7 +222,6 @@ button {
   color: inherit;
 }
 
-/* Inputs */
 input,
 textarea {
   font-family: inherit;
@@ -262,7 +246,6 @@ textarea::placeholder {
   color: var(--text-muted);
 }
 
-/* Badge Colors */
 .badge-country {
   background: rgba(37, 99, 235, 0.1);
   color: var(--perspective-country);

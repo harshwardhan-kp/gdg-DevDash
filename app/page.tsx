@@ -4,7 +4,6 @@ import { useState, useRef, useEffect, FormEvent } from 'react';
 import styles from './page.module.css';
 import { PERSPECTIVE_TYPES, PerspectiveResponse } from '@/lib/prompts';
 
-// SVG Icons
 const HomeIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -96,7 +95,6 @@ const ChurchIcon = () => (
   </svg>
 );
 
-// Perspective icon mapping
 const perspectiveIcons: Record<string, React.ReactNode> = {
   country: <GlobeIcon />,
   community: <UsersIcon />,
@@ -105,10 +103,8 @@ const perspectiveIcons: Record<string, React.ReactNode> = {
   academic: <BookIcon />,
 };
 
-// Theme types
 type Theme = 'system' | 'light' | 'dark';
 
-// Helper to parse perspective response from AI
 function parsePerspectiveResponse(text: string): PerspectiveResponse | null {
   try {
     const jsonMatch = text.match(/\{[\s\S]*\}/);
@@ -121,13 +117,11 @@ function parsePerspectiveResponse(text: string): PerspectiveResponse | null {
   }
 }
 
-// Get badge class for perspective type
 function getBadgeClass(type: string): string {
   const validTypes = ['country', 'community', 'religion', 'ideology', 'academic'];
   return validTypes.includes(type) ? `badge-${type}` : 'badge-academic';
 }
 
-// Message type
 interface Message {
   id: string;
   role: 'user' | 'assistant';
@@ -143,7 +137,6 @@ export default function Home() {
   const [theme, setTheme] = useState<Theme>('system');
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Theme effect
   useEffect(() => {
     const root = document.documentElement;
 
@@ -155,12 +148,10 @@ export default function Home() {
     }
   }, [theme]);
 
-  // Auto-scroll to bottom
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  // Parse responses when messages change
   useEffect(() => {
     const newParsed = new Map(parsedResponses);
     messages.forEach((msg) => {
@@ -248,7 +239,6 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      {/* Header */}
       <header className={styles.header}>
         <div className={styles.headerLeft}>
           <div className={styles.logo}>
@@ -268,7 +258,6 @@ export default function Home() {
         </div>
 
         <div className={styles.headerRight}>
-          {/* Theme Toggle */}
           <div className={styles.themeToggle}>
             <button
               className={`${styles.themeBtn} ${theme === 'system' ? styles.active : ''}`}
@@ -293,7 +282,6 @@ export default function Home() {
             </button>
           </div>
 
-          {/* Home Button - only show when in conversation */}
           {messages.length > 0 && (
             <button className={styles.homeBtn} onClick={handleGoHome} title="Home">
               <HomeIcon />
@@ -303,7 +291,6 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Main Chat Area */}
       <main className={styles.main}>
         {messages.length === 0 ? (
           <div className={styles.welcome}>
@@ -329,7 +316,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Perspective Types Legend */}
             <div className={styles.legend}>
               <span className={styles.legendLabel}>Perspective Types:</span>
               <div className={styles.legendItems}>
@@ -391,7 +377,6 @@ export default function Home() {
         )}
       </main>
 
-      {/* Input Area */}
       <footer className={styles.footer}>
         <form onSubmit={handleSubmit} className={styles.inputForm}>
           <input
@@ -423,17 +408,14 @@ export default function Home() {
   );
 }
 
-// Perspective Display Component
 function PerspectiveDisplay({ data }: { data: PerspectiveResponse }) {
   return (
     <div className={styles.perspectiveDisplay}>
-      {/* Event Header */}
       <div className={styles.eventHeader}>
         <h3>{data.event}</h3>
         <p className={styles.eventContext}>{data.context}</p>
       </div>
 
-      {/* Perspectives Grid */}
       <div className={styles.perspectivesGrid}>
         {data.perspectives.map((perspective, idx) => (
           <div
@@ -476,7 +458,6 @@ function PerspectiveDisplay({ data }: { data: PerspectiveResponse }) {
         ))}
       </div>
 
-      {/* Disclaimer */}
       {data.disclaimer && (
         <p className={styles.responseDisclaimer}>{data.disclaimer}</p>
       )}

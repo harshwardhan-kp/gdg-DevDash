@@ -17,7 +17,7 @@
 
 **A multi-perspective historical narrative platform that presents historical events through the lens of different countries, communities, religions, ideologies, and academic viewpoints — all side by side.**
 
-[View Demo](https://polylens.vercel.app) · [Report Bug](https://github.com/harshwardhan-kp/PolyLens/issues) · [Request Feature](https://github.com/harshwardhan-kp/PolyLens/issues)
+[View Demo](https://poly-lens.vercel.app) · [Report Bug](https://github.com/harshwardhan-kp/PolyLens/issues) · [Request Feature](https://github.com/harshwardhan-kp/PolyLens/issues)
 
 <br/>
 

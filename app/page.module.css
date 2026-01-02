@@ -1,0 +1,504 @@
+/* ===========================================
+   PERSPECTIVE - Page Styles
+   ChatGPT-like UI with multi-perspective cards
+   =========================================== */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-lg);
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: var(--space-xl) 0;
+  animation: fadeIn 0.6s ease;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.logoIcon {
+  font-size: 2.5rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.logo h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent-secondary), var(--accent-tertiary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tagline {
+  color: var(--text-tertiary);
+  font-size: 1rem;
+}
+
+/* Main Content Area */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: var(--space-lg) 0;
+}
+
+/* Welcome Screen */
+.welcome {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--space-2xl);
+  animation: slideUp 0.6s ease;
+}
+
+.welcomeContent h2 {
+  font-size: 1.75rem;
+  margin-bottom: var(--space-md);
+  background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.welcomeContent p {
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.examples {
+  margin-top: var(--space-xl);
+}
+
+.examplesLabel {
+  display: block;
+  color: var(--text-tertiary);
+  font-size: 0.875rem;
+  margin-bottom: var(--space-md);
+}
+
+.exampleButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+  max-width: 600px;
+}
+
+.exampleButton {
+  padding: var(--space-sm) var(--space-md);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.exampleButton:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+/* Legend */
+.legend {
+  padding: var(--space-lg);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+}
+
+.legendLabel {
+  display: block;
+  color: var(--text-tertiary);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-md);
+}
+
+.legendItems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Messages Area */
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.message {
+  animation: fadeIn 0.4s ease;
+}
+
+.userMessage {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.userBubble {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  max-width: 600px;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--accent-primary);
+  border-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-sm);
+}
+
+.userBubble p {
+  color: white;
+}
+
+.userIcon {
+  font-size: 1.25rem;
+}
+
+.assistantMessage {
+  width: 100%;
+}
+
+/* Perspective Container */
+.perspectiveContainer {
+  width: 100%;
+}
+
+.perspectiveDisplay {
+  animation: slideUp 0.5s ease;
+}
+
+.eventHeader {
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.eventHeader h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-sm);
+  color: var(--text-primary);
+}
+
+.eventContext {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* Perspectives Grid */
+.perspectivesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-lg);
+}
+
+.perspectiveCard {
+  padding: var(--space-lg);
+  animation: slideUp 0.5s ease backwards;
+  transition: all var(--transition-normal);
+}
+
+.perspectiveCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-primary);
+  box-shadow: var(--shadow-glow);
+}
+
+.cardHeader {
+  margin-bottom: var(--space-md);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-sm);
+}
+
+.cardHeader h4 {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.cardSummary {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+}
+
+.keyPoints {
+  list-style: none;
+  margin-bottom: var(--space-md);
+}
+
+.keyPoints li {
+  position: relative;
+  padding-left: var(--space-lg);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-sm);
+  line-height: 1.6;
+}
+
+.keyPoints li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent-secondary);
+}
+
+.sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--glass-border);
+}
+
+.sourcesLabel {
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.biasNote {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+  padding: var(--space-sm);
+  background: rgba(245, 158, 11, 0.1);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  color: var(--perspective-religion);
+}
+
+.responseDisclaimer {
+  margin-top: var(--space-xl);
+  padding: var(--space-md);
+  background: var(--glass-bg);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  text-align: center;
+  font-style: italic;
+}
+
+/* Loading States */
+.rawResponse {
+  padding: var(--space-lg);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+}
+
+.streamingText {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.loadingMessage {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  color: var(--text-tertiary);
+}
+
+.loadingIndicator {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.loadingDot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-primary);
+  border-radius: 50%;
+  animation: pulse 1.4s infinite ease-in-out;
+}
+
+.loadingDot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loadingDot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.errorMessage {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: var(--radius-lg);
+  color: var(--perspective-ideology);
+}
+
+/* Footer / Input Area */
+.footer {
+  padding: var(--space-lg) 0;
+  margin-top: auto;
+}
+
+.inputForm {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-sm);
+  background: var(--bg-secondary);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-fast);
+}
+
+.inputForm:focus-within {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: var(--space-md);
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.sendButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--accent-primary);
+  border-radius: var(--radius-lg);
+  color: white;
+  font-size: 1.5rem;
+  transition: all var(--transition-fast);
+}
+
+.sendButton:hover:not(:disabled) {
+  background: var(--accent-secondary);
+  transform: scale(1.05);
+}
+
+.sendButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sendLoading {
+  animation: pulse 1s infinite;
+}
+
+.disclaimer {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: var(--space-md);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: var(--space-md);
+  }
+
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+
+  .logoIcon {
+    font-size: 2rem;
+  }
+
+  .welcomeContent h2 {
+    font-size: 1.35rem;
+  }
+
+  .perspectivesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .userBubble {
+    max-width: 100%;
+  }
+
+  .eventHeader h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .exampleButtons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .exampleButton {
+    text-align: left;
+  }
+
+  .legendItems {
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -41,13 +41,21 @@
   color: var(--text-primary);
 }
 
-.logo svg {
-  color: var(--accent-primary);
+.logoIcon {
+  transition: transform var(--transition-normal);
+}
+
+.logo:hover .logoIcon {
+  transform: scale(1.05);
 }
 
 .logo h1 {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .tagline {

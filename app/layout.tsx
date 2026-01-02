@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Perspective | Multi-Perspective Historical Narratives",
+  title: "PolyLens | See History Through Every Perspective",
   description:
     "Explore historical events through multiple narratives. View perspectives from different countries, communities, religions, ideologies, and academic viewpoints side-by-side.",
   keywords: [
@@ -19,10 +19,11 @@ export const metadata: Metadata = {
     "historical events",
     "education",
     "AI",
+    "PolyLens",
   ],
-  authors: [{ name: "Perspective Team" }],
+  authors: [{ name: "PolyLens Team" }],
   openGraph: {
-    title: "Perspective | Multi-Perspective Historical Narratives",
+    title: "PolyLens | See History Through Every Perspective",
     description:
       "Explore history through diverse viewpoints. Compare narratives side-by-side.",
     type: "website",

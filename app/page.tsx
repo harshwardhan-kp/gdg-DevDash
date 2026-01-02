@@ -252,10 +252,18 @@ export default function Home() {
       <header className={styles.header}>
         <div className={styles.headerLeft}>
           <div className={styles.logo}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M12 3L2 12h3v9h6v-6h2v6h6v-9h3L12 3z" />
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className={styles.logoIcon}>
+              <defs>
+                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#10a37f" />
+                  <stop offset="50%" stopColor="#19c992" />
+                  <stop offset="100%" stopColor="#2dd4bf" />
+                </linearGradient>
+              </defs>
+              <circle cx="11" cy="11" r="7" stroke="url(#logoGradient)" strokeWidth="2.5" fill="none" />
+              <line x1="16" y1="16" x2="21" y2="21" stroke="url(#logoGradient)" strokeWidth="2.5" strokeLinecap="round" />
             </svg>
-            <h1>Perspective</h1>
+            <h1>PolyLens</h1>
           </div>
         </div>
 
